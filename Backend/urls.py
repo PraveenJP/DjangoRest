@@ -10,5 +10,6 @@ router.register(r'student',StudentControl,base_name='student')
 
 urlpatterns=[
 	url(r'^',include(router.urls),name='index'),
-	url(r'^swagger/$', schema_view)
+	url(r'^swagger/$', schema_view),
+	url(r'^apiview/$', getResponse, name='apiview')
 ]

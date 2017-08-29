@@ -6,6 +6,7 @@ from Backend.models import (
 from Backend.serializers import StudentSerializer
 from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
+from rest_framework.decorators import api_view	
 
 # Create your views here.
 
@@ -59,3 +60,8 @@ class StudentControl(viewsets.ModelViewSet):
 			return Response("Success")
 		except student.DoesNotExist:
 			return Response("Failed")
+
+## Function Based Views
+@api_view()
+def getResponse(request):
+	return Response("Success")
